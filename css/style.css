@@ -1,13 +1,9 @@
 body {
-  background-color: #000;
+  background-color: #000; /* Black background color */
   background-image:
     linear-gradient(45deg, rgba(255, 255, 255, 0.05) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.05) 75%, transparent 75%, transparent),
-    linear-gradient(to right, rgba(93, 0, 160, 0.38), rgba(26, 0, 37, 0.33));
-  background-size: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  color: #ecf0f1;
+    linear-gradient(to right, rgba(93, 0, 160, 0.38), rgba(26, 0, 37, 0.33)); /* Dark purple gradient */
+  background-size: 100%; /* Size of the repeating pattern */
 }
 
 #intro-header {
@@ -15,8 +11,10 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
-  background: linear-gradient(to bottom right, #2c3e50, #000);
+  height: 100vh; /* Change to 100vh to fill the screen */
+  margin: 0;
+  padding: 0;
+    background: linear-gradient(to bottom right, #2c3e50, #000); /* Color blend background */
   color: #ecf0f1;
   display: flex;
   justify-content: center;
@@ -45,18 +43,19 @@ body {
 }
 
 .profile-picture {
-  width: 150px;
+  width: 150px; /* Adjust the size of the circular frame */
   height: 150px;
-  border-radius: 50%;
-  overflow: hidden;
+  border-radius: 50%; /* Make it circular */
+  overflow: hidden; /* Hide overflowing content */
   margin-bottom: 20px;
 }
 
 .profile-picture img {
-  width: 100%;
+  width: 100%; /* Make the image fill the circular frame */
   height: auto;
   display: block;
 }
+
 
 @keyframes slideInFromTop {
   0% {
@@ -84,47 +83,49 @@ body {
   opacity: 0 !important;
 }
 
+
+/* Navigation bar */
 #navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #000;
+  background-color: #000; /* Black background */
   padding: 10px 0;
   text-align: center;
-  z-index: 1000;
-  height: 3vh;
+  z-index: 1000; /* Ensure navbar is above main content */
+height: 3vh;
 }
 
 #navbar ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
 }
 
 #navbar li {
+  display: inline;
   margin: 0 10px;
 }
 
 #navbar a {
   text-decoration: none;
-  color: #ffd700;
+  color: #ffd700; /* Gold text */
   font-weight: bold;
   font-size: 16px;
   transition: color 0.3s;
 }
 
 #navbar a:hover {
-  color: #eeeeee;
+  color: #eeeeee; /* White text on hover */
 }
 
+/* Main content */
 #content {
-  padding-top: 100px;
-}
+  padding-top: 100px; /* Adjust padding to account for fixed navbar */
+ }
 
+/* Itinerary section */
 #itinerary {
   position: relative;
 }
@@ -133,7 +134,7 @@ body {
   margin: 20px auto;
   width: 100px;
   position: relative;
-  animation: moveBus 4s infinite alternate;
+  animation: moveBus 4s infinite alternate; /* Matatu animation */
 }
 
 #bus-animation img {
@@ -149,9 +150,10 @@ body {
   }
 }
 
+/* General styling for sections */
 section {
-  background-color: #000;
-  color: #ffd700;
+  background-color: #000; /* Black background */
+  color: #ffd700; /* Gold text */
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 5px;
@@ -160,6 +162,7 @@ section {
 section h2 {
   font-size: 24px;
   margin-bottom: 10px;
+
   color: #ecf0f1;
 }
 
@@ -171,37 +174,41 @@ section li {
   margin-bottom: 5px;
 }
 
+/* Itinerary section */
+#itinerary {
+  position: relative;
+}
+
 #van-container {
   position: relative;
-  overflow-x: hidden;
 }
 
 #van-animation {
-  font-size: 50px;
-  animation: moveVan 16s infinite linear;
+  font-size: 50px; /* Adjust font size as needed */
+  animation: moveVan 16s infinite linear; /* Adjust animation duration */
 }
 
 .stop-label {
   position: absolute;
-  font-size: 20px;
-  color: #ff9011;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  font-size: 20px; /* Adjust font size for stop labels */
+  color: #ff9011; /* Text color */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Text shadow for better visibility */
 }
 
 #nairobi-label {
-  left: -10px;
+  left: -10px; /* Adjust left position for Nairobi */
   top: 50%;
   transform: translateY(-50%);
 }
 
 #kitengela-label {
-  left: calc(30% - 10px);
+  left: calc(30% - 10px); /* Adjust left position for Kitengela */
   top: 50%;
   transform: translateY(-50%);
 }
 
 #namanga-label {
-  left: calc(80% - 20px);
+  left: calc(80% - 20px); /* Adjust left position for Namanga */
   top: 50%;
   transform: translateY(-50%);
 }
@@ -219,6 +226,7 @@ ul li strong {
   font-weight: bold;
 }
 
+/* Connect stops with dashed line */
 #itinerary:before {
   content: "";
   position: absolute;
@@ -226,27 +234,29 @@ ul li strong {
   left: 0;
   width: 100%;
   height: 1px;
-  border-top: 7px dashed #c1c1c1;
+  border-top: 7px dashed #c1c1c1; /* Dashed line */
+
 }
 
 @keyframes moveVan {
   0% {
-    transform: translateX(-10px);
+    transform: translateX(-10px); /* Move to Nairobi */
   }
   25% {
-    transform: translateX(calc(30% - 10px));
+    transform: translateX(calc(30% - 10px)); /* Move to Kitengela */
   }
   30% {
-    transform: translateX(calc(30% - 10px));
+    transform: translateX(calc(30% - 10px)); /* Pause at Kitengela */
   }
   55% {
-    transform: translateX(calc(80% - 20px));
+    transform: translateX(calc(80% - 20px)); /* Continue to Namanga */
   }
-  60% {
-    transform: translateX(calc(80% - 20px));
+   60% {
+    transform: translateX(calc(80% - 20px)); /* Continue to Namanga */
   }
+
   100% {
-    transform: translateX(-10px);
+    transform: translateX(-10px); /* Return to Nairobi */
   }
 }
 
@@ -254,8 +264,8 @@ ul li strong {
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 5px;
-  background-color: #000;
-  color: #ffd700;
+  background-color: #000; /* Black background */
+  color: #ffd700; /* Gold text */
 }
 
 #contact h2 {
@@ -278,89 +288,14 @@ ul li strong {
 
 #contact li i {
   margin-right: 10px;
-  color: #ffd700;
+  color: #ffd700; /* Gold color for icons */
 }
 
 #contact a {
-  color: #ffd700;
+  color: #ffd700; /* Gold color for links */
   text-decoration: none;
 }
 
 #contact a:hover {
   text-decoration: underline;
-}
-
-/* Media Queries for Mobile Devices */
-@media (max-width: 768px) {
-  .intro-content h1 {
-    font-size: 28px;
-  }
-
-  .intro-content p {
-    font-size: 16px;
-  }
-
-  .profile-picture {
-    width: 100px;
-    height: 100px;
-  }
-
-  #navbar ul {
-    flex-direction: column;
-  }
-
-  #navbar li {
-    margin: 5px 0;
-  }
-
-  section {
-    padding: 15px;
-  }
-
-  section h2 {
-    font-size: 20px;
-  }
-
-  section ul li {
-    font-size: 16px;
-  }
-
-  .stop-label {
-    font-size: 16px;
-  }
-
-  #van-animation {
-    font-size: 40px;
-  }
-}
-
-@media (max-width: 480px) {
-  .intro-content h1 {
-    font-size: 24px;
-  }
-
-  .intro-content p {
-    font-size: 14px;
-  }
-
-  .profile-picture {
-    width: 80px;
-    height: 80px;
-  }
-
-  section h2 {
-    font-size: 18px;
-  }
-
-  section ul li {
-    font-size: 14px;
-  }
-
-  .stop-label {
-    font-size: 14px;
-  }
-
-  #van-animation {
-    font-size: 30px;
-  }
 }
