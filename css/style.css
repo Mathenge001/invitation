@@ -290,3 +290,89 @@ ul li strong {
 #contact a:hover {
   text-decoration: underline;
 }
+
+/* Existing CSS styles */
+
+/* Media queries for tablets and mobile devices */
+@media (max-width: 768px) {
+  .intro-content h1 {
+    font-size: 28px;
+  }
+
+  .intro-content p {
+    font-size: 16px;
+  }
+
+  .profile-picture {
+    width: 100px;
+    height: 100px;
+  }
+
+  #navbar a {
+    font-size: 14px;
+  }
+
+  section {
+    padding: 15px;
+  }
+
+  section h2 {
+    font-size: 20px;
+  }
+
+  section ul li {
+    font-size: 16px;
+  }
+
+  .stop-label {
+    font-size: 16px;
+  }
+
+  #van-animation {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro-content h1 {
+    font-size: 24px;
+  }
+
+  .intro-content p {
+    font-size: 14px;
+  }
+
+  .profile-picture {
+    width: 80px;
+    height: 80px;
+  }
+
+  #navbar {
+    padding: 5px 0;
+  }
+
+  #navbar a {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  section h2 {
+    font-size: 18px;
+  }
+
+  section ul li {
+    font-size: 14px;
+  }
+
+  .stop-label {
+    font-size: 14px;
+  }
+
+  #van-animation {
+    font-size: 30px;
+  }
+
+  #content {
+    padding-top: 60px; /* Adjusted to ensure proper spacing */
+  }
+}
