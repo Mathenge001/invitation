@@ -227,16 +227,7 @@ ul li strong {
   font-weight: bold;
 }
 
-/* Connect stops with dashed line */
-#itinerary:before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  height: 1px;
 
-}
 
 @keyframes moveVan {
   0% {
