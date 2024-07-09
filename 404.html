@@ -1,62 +1,180 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <title>Page Not Found</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RSVP</title>
   <style>
-    * {
-      line-height: 1.2;
-      margin: 0;
-    }
-
-    html {
-      color: #888;
-      display: table;
-      font-family: sans-serif;
-      height: 100%;
+    /* Basic styles for the initial RSVP section */
+    #rsvp {
+      padding: 20px;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      max-width: 600px;
+      margin: auto;
       text-align: center;
+    }
+
+    #rsvp button {
+      margin-top: 20px;
+      background-color: #28a745;
+      color: white;
+      cursor: pointer;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+    }
+
+    #rsvp button:hover {
+      background-color: #218838;
+    }
+
+    /* Styles for the modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
       width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgb(0,0,0);
+      background-color: rgba(0,0,0,0.4);
+      padding-top: 60px;
     }
 
-    body {
-      display: table-cell;
-      vertical-align: middle;
-      margin: 2em auto;
+    .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 600px;
     }
 
-    h1 {
-      color: #555;
-      font-size: 2em;
-      font-weight: 400;
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
     }
 
-    p {
-      margin: 0 auto;
-      width: 280px;
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
     }
 
-    @media only screen and (max-width: 280px) {
+    /* Styles for the form inside the modal */
+    #rsvp-form {
+      display: flex;
+      flex-direction: column;
+    }
 
-      body,
-      p {
-        width: 95%;
-      }
+    #rsvp-form label {
+      margin-top: 10px;
+    }
 
-      h1 {
-        font-size: 1.5em;
-        margin: 0 0 0.3em;
-      }
+    #rsvp-form input, #rsvp-form select, #rsvp-form textarea, #rsvp-form button {
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
 
+    #rsvp-form button {
+      margin-top: 20px;
+      background-color: #28a745;
+      color: white;
+      cursor: pointer;
+      border: none;
+    }
+
+    #rsvp-form button:hover {
+      background-color: #218838;
     }
   </style>
 </head>
-
 <body>
-  <h1>Page Not Found</h1>
-  <p>Sorry, but the page you were trying to view does not exist.</p>
-</body>
+  <!-- Initial RSVP Section -->
+  <section id="rsvp">
+    <h2>RSVP</h2>
+    <p>Your presence will be highly appreciated</p>
+    <p>Let me know if you're in for the adventure! RSVP by October 12, 2024.</p>
+    <button id="rsvp-button">RSVP Now</button>
+  </section>
 
+  <!-- The Modal -->
+  <div id="rsvp-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <section id="rsvp">
+          <!-- Contact Form -->
+        <div class="contact-form animate_animated animate_fadeIn" style="background-color: #000; color: #d4af37;">
+             <h3 style="color: #ff0000;">RSVP</h3>
+  <form action="https://formspree.io/f/xjvnzlyo" method="POST">
+    <label style="color: #d4af37;">Your email:
+      <input type="email" name="email" style="background-color: #000; color: #d4af37;">
+    </label>
+        <label style="color: #d4af37;">Your name:
+      <input type="name" name="name" style="background-color: #000; color: #d4af37;">
+    </label>
+
+    <label style="color: #d4af37;">will you attend?:
+     <select id="attendance" name="attendance" required>
+    <option value="yes">Yes</option>
+    <option value="no">No</option>
+  </select>
+    </label>
+
+    <label>Will you bring a plus one?
+  <select id="plus_one" name="plus_one" required>
+    <option value="no">No</option>
+    <option value="yes">Yes</option>
+  </select>
+</label>
+
+    <label style="color: #d4af37;">Reccomendations:
+      <textarea name="message" style="background-color: #000; color: #d4af37;"></textarea>
+    </label>
+    <!-- your other form fields go here -->
+    <button type="submit" style="background-color: #ff0000; color: #000;">Send</button>
+  </form>
+</div>
+</div>
+</section>
+
+ <!-- Red border horizontal line with space -->
+<div style="border-top: 19px solid #2c2c31; margin-top: 20px; margin-bottom: 20px;"></div>
+  <!-- JavaScript for modal functionality -->
+  <script>
+    // Get the modal
+    var modal = document.getElementById("rsvp-modal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("rsvp-button");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+</body>
 </html>
-<!-- IE needs 512+ bytes: https://docs.microsoft.com/archive/blogs/ieinternals/friendly-http-error-pages -->

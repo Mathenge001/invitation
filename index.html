@@ -4,6 +4,116 @@
   <title>Lorna's 21st Birthday Road Trip Bash!</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+ <style>
+    /* Basic styles for the initial RSVP section */
+    #rsvp {
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.7);
+      border: 1px solid #ddd;
+      max-width: 600px;
+      margin: auto;
+      text-align: center;
+    }
+
+    #rsvp button {
+      margin-top: 20px;
+      background-color: #28a745;
+      color: white;
+      cursor: pointer;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+    }
+
+    #rsvp button:hover {
+      background-color: #218838;
+    }
+
+    /* Styles for the modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgb(0,0,0);
+      background-color: rgba(0,0,0,0.4);
+      padding-top: 60px;
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 600px;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    /* Styles for the form inside the modal */
+    .contact-form {
+      background-color: #000;
+      color: #d4af37;
+      padding: 20px;
+    }
+
+    .contact-form h3 {
+      color: #ff0000;
+    }
+
+    .contact-form label {
+      display: block;
+      margin: 10px 0;
+    }
+
+    .contact-form input, .contact-form select, .contact-form textarea, .contact-form button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background-color: #000;
+      color: #d4af37;
+    }
+
+    .contact-form button {
+      margin-top: 20px;
+      background-color: #ff0000;
+      color: #000;
+      cursor: pointer;
+      border: none;
+    }
+
+    .contact-form button:hover {
+      background-color: #cc0000;
+    }
+
+    /* Red border horizontal line with space */
+    .divider {
+      border-top: 19px solid #2c2c31;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  </style>
+
 </head>
 
 <body>
@@ -83,15 +193,59 @@
       </ul>
     </section>
 
-    <section id="rsvp">
-      <h2>RSVP</h2>
-      <p>Your presence will be highly appreciated</p>
-      <p>Let me know if you're in for the adventure! RSVP by October 12 2024.</p>
-    </section>
+  <section id="rsvp">
+    <h2>RSVP</h2>
+    <p>Your presence will be highly appreciated</p>
+    <p>Let me know if you're in for the adventure! RSVP by October 12, 2024.</p>
+    <button id="rsvp-button">RSVP Now</button>
+  </section>
+
+  <!-- The Modal -->
+  <div id="rsvp-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+
+      <!-- Contact Form -->
+      <div class="contact-form animate_animated animate_fadeIn">
+        <h3>RSVP</h3>
+        <form action="https://formspree.io/f/xjvnzlyo" method="POST">
+          <label>Your email:
+            <input type="email" name="email" required>
+          </label>
+
+          <label>Your name:
+            <input type="text" name="name" required>
+          </label>
+
+          <label>Will you attend?
+            <select id="attendance" name="attendance" required>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </label>
+
+          <label>Will you bring a plus one?
+            <select id="plus_one" name="plus_one" required>
+              <option value="no">No</option>
+              <option value="yes">Yes</option>
+            </select>
+          </label>
+
+          <label>Recommendations:
+            <textarea name="message" required></textarea>
+          </label>
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
 
   <section id="contact">
   <h2>Contact Info</h2>
-  <p>For any inquiries or to confirm your attendance, reach out to at:</p>
+  <p>For any inquiries or to confirm your attendance, reach out to at:<br>
+  just tap the link/number</p>
   <ul>
     <li>
       <i class="fab fa-whatsapp"></i>
@@ -115,6 +269,36 @@
 
 
   </main>
+
+
+
   <script src="js/app.js"></script>
+<script>
+   // Get the modal
+    var modal = document.getElementById("rsvp-modal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("rsvp-button");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+</script>
 </body>
 </html>

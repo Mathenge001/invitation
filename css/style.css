@@ -25,9 +25,12 @@ body {
 }
 
 .intro-content {
-  text-align: center;
-  opacity: 1;
-  transition: opacity 1s ease-in-out;
+    padding: 20px;
+      background-color: rgba(0, 0, 0, 0.38);
+      border: 1px solid #ffffff;
+      max-width: 600px;
+      margin: auto;
+      text-align: center;
 }
 
 .intro-content h1 {
@@ -126,8 +129,18 @@ height: 3vh;
  }
 
 /* Itinerary section */
+
 #itinerary {
-  position: relative;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 1px solid #ddd;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+#itinerary h2 {
+  color: #eeeeee;
+  text-align: center;
 }
 
 #bus-animation {
@@ -429,4 +442,102 @@ ul li strong {
   #content {
     padding-top: 60px; /* Adjusted for smaller screens */
   }
+}
+#welcome {
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 1px solid #ddd;
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+   margin-bottom: 20px; /* Adds space below #welcome section */
+}
+
+#welcome h2 {
+  color: #ffffff;
+}
+
+
+/* Styles for #activities */
+#activities {
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 1px solid #ddd;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+#activities h2 {
+  color: #eeeeee;
+  text-align: center;
+}
+
+#activities ul {
+  padding: 0;
+  list-style-type: disc;
+}
+
+#activities ul li {
+  margin-bottom: 10px;
+}
+
+/* Styles for #budget */
+#budget {
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 1px solid #ddd;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+#budget h2 {
+  color: #ffffff;
+  text-align: center;
+}
+
+#budget ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+#budget ul li {
+  margin-bottom: 10px;
+}
+
+/* Styles for #contact */
+#contact {
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 1px solid #ddd;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+#contact h2 {
+  color: #ffffff;
+  text-align: center;
+}
+
+#contact p {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#contact ul {
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+}
+
+#contact ul li {
+  margin-bottom: 10px;
+}
+
+#contact ul li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+#contact ul li a:hover {
+  text-decoration: underline;
 }
