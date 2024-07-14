@@ -199,7 +199,7 @@ section li {
 
 #van-animation {
   font-size: 50px; /* Adjust font size as needed */
-  animation: moveVan 16s infinite linear; /* Adjust animation duration */
+  animation: moveVan 14s infinite linear; /* Adjust animation duration */
 }
 
 .stop-label {
@@ -247,13 +247,13 @@ ul li strong {
     transform: translateX(-10px); /* Move to Nairobi */
   }
   25% {
-    transform: translateX(calc(30% - 10px)); /* Move to Kitengela */
+    transform: translateX(calc(30% - -92px)); /* Move to Kitengela */
   }
   30% {
-    transform: translateX(calc(30% - 10px)); /* Pause at Kitengela */
+    transform: translateX(calc(30% - -92px)); /* Pause at Kitengela */
   }
   55% {
-    transform: translateX(calc(80% - 20px)); /* Continue to Namanga */
+    transform: translateX(calc(80% - -210px)); /* Continue to Namanga */
   }
    60% {
     transform: translateX(calc(80% - 20px)); /* Continue to Namanga */
